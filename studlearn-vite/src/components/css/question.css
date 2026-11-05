@@ -1,0 +1,14 @@
+.input_dir{
+    display: flex;
+    flex-direction: column;
+}
+
+.input_st{
+    width: 1000px;
+}
+
+@media (max-width: 700px) {
+    .input_st{
+        width: 100%;
+    }
+}

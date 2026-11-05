@@ -1,0 +1,103 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+:root {
+    --primary: #4294E3;
+    /* --secondary: #041858; */
+    --light: #F0F6FF;
+    --dark: #262B47;
+}
+
+.btn {
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.btn.btn-primary-gradient,
+.btn.btn-secondary-gradient {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.btn.btn-primary-gradient::after,
+.btn.btn-secondary-gradient::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    z-index: -1;
+    opacity: 0;
+}
+
+.btn.btn-primary-gradient,
+.btn.btn-secondary-gradient::after {
+    background: -webkit-gradient(linear, left top, right bottom, from(var(--primary)), to(var(--secondary)));
+    background: -o-linear-gradient(top left, var(--primary), var(--secondary));
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+}
+
+.btn.btn-secondary-gradient,
+.btn.btn-primary-gradient::after {
+    background: -webkit-gradient(linear, left top, right bottom, from(var(--secondary)), to(var(--primary)));
+    background: -o-linear-gradient(top left, var(--secondary), var(--primary));
+    background: linear-gradient(to bottom right, var(--secondary), var(--primary));
+}
+
+.btn.btn-primary-gradient:hover::after,
+.btn.btn-secondary-gradient:hover::after {
+    opacity: 1;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+}
+
+.text-primary-gradient {
+    background: -webkit-gradient(linear, left top, right bottom, from(var(--primary)), to(var(--secondary)));
+    background: -o-linear-gradient(top left, var(--primary), var(--secondary));
+    background: linear-gradient(to bottom right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
