@@ -1,16 +1,16 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import './css/footer.css';
 // import Navbar from './Navbar';
 
 function Footer() {
 
     return (
         <>
-            <div className='footer-color'>
+            <footer className='footer-color'>
                 <section className="info_section layout_padding2">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-3">
+                    <div className="footer-container">
+                        <div className="footer-grid">
+                            <div className="footer-column">
                                 <div className="info_logo">
                                     <h3>
                                         STUDLEARN
@@ -20,7 +20,7 @@ function Footer() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="footer-column">
                                 <div className="info_links">
                                     <h4>
                                         BASIC LINKS
@@ -41,7 +41,7 @@ function Footer() {
                                     </ul>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="footer-column">
                                 <div className="info_contact">
                                     <h4>
                                         CONTACT DETAILS
@@ -64,7 +64,7 @@ function Footer() {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="footer-column">
                                 <div className="info_form ">
                                     <h4>
                                         NEWSLETTER
@@ -96,13 +96,13 @@ function Footer() {
                 </section>
 
                 <section className="container-fluid footer_section">
-                    <div className="container">
+                    <div className="footer-container">
                         <p>
-                            &copy; <span id="displayYear"></span> All Rights Reserved By studlearn
+                            &copy; {new Date().getFullYear()} All Rights Reserved By studlearn
                         </p>
                     </div>
                 </section>
-            </div>
+            </footer>
         </>
     )
 }

@@ -1,60 +1,49 @@
-import React from 'react';
 import slider from './images/slider-img.png'
 import './css/responsive.css';
 import './css/style.css';
+import './css/home.css';
 import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 
-const Index = (props) => {
+const Index = () => {
     return (
         <>
             <Navbar style={{ backgroundColor: "#222a33" }} active1={"active"} />
-            <div className="hero_area">
-                <section className=" slider_section ">
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <div className="carousel-inner">
-                            <div className="carousel-item active">
-                                <div className="container">
-                                    <div className="row">
-                                        <div className="col-md-6 ">
-                                            <div className="detail_box">
-                                                <h1>
-                                                    The best E-learning platform
-                                                </h1>
-                                                <p>
-                                                    Unlock Your Potential Anytime, Anywhere with our E-Learning Platform
-                                                </p>
-                                                <div className="btn-box">
-                                                    <Link to="/contact" className="btn-1">
-                                                        Contact Us
-                                                    </Link>
-                                                    <Link to="/question" className="btn-2">
-                                                        Query
-                                                    </Link>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div className="img-box">
-                                                <img src={slider} alt="Not Found" />
-                                            </div>
-                                        </div>
-                                    </div>
+            <main className="hero_area">
+                <section className="slider_section home-hero" aria-labelledby="home-title">
+                    <div className="home-hero-container">
+                        <div className="home-hero-content">
+                            <p className="home-eyebrow">LEARN WITHOUT LIMITS</p>
+                            <div className="detail_box">
+                                <h1 id="home-title">
+                                    The best <span>E-learning</span> platform
+                                </h1>
+                                <p className="home-hero-description">
+                                    Unlock your potential anytime, anywhere with
+                                    personalized learning support and instant answers.
+                                </p>
+                                <div className="btn-box">
+                                    <Link to="/question" className="btn-1">
+                                        Ask a Question
+                                    </Link>
+                                    <Link to="/about" className="btn-2">
+                                        Explore Studlearn
+                                    </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="carousel_btn-container">
-                            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                                <span className="sr-only">Previous</span>
-                            </a>
-                            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                                <span className="sr-only">Next</span>
-                            </a>
+                        <div className="home-hero-visual">
+                            <div className="home-hero-glow" aria-hidden="true" />
+                            <img src={slider} alt="Student learning with Studlearn" />
+                            <div className="home-hero-card" aria-hidden="true">
+                                <strong>Smart learning</strong>
+                                <span>Support when you need it</span>
+                            </div>
                         </div>
-                    </div>
+                    </div> 
                 </section>
-            </div>
+            </main>
         </>
     )
 }

@@ -1,0 +1,204 @@
+.home-hero {
+  min-height: min(680px, calc(100vh - 80px));
+  box-sizing: border-box;
+  padding: 72px 0 96px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 35%, rgba(0, 253, 195, 0.13), transparent 28%),
+    linear-gradient(135deg, rgba(4, 24, 88, 0.96), rgba(34, 42, 51, 0.92));
+}
+
+.home-hero-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+  align-items: center;
+  gap: clamp(32px, 7vw, 100px);
+  width: min(1170px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.home-eyebrow {
+  margin: 0 0 18px;
+  color: #00fdc3;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.home-hero .detail_box h1 {
+  max-width: 620px;
+  margin: 0 0 24px;
+  color: #ffffff;
+  font-size: clamp(2.75rem, 5vw, 4.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.home-hero .detail_box h1 span {
+  color: #00fdc3;
+}
+
+.home-hero-description {
+  max-width: 510px;
+  margin: 0;
+  color: #d7deee;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.75;
+}
+
+.home-hero .detail_box .btn-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 34px 0 0;
+}
+
+.home-hero .detail_box .btn-box a {
+  width: auto;
+  min-width: 150px;
+  margin: 0;
+  padding: 13px 22px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-weight: 600;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.home-hero .detail_box .btn-box a:hover,
+.home-hero .detail_box .btn-box a:focus-visible {
+  transform: translateY(-2px);
+}
+
+.home-hero .detail_box .btn-box a.btn-1 {
+  color: #041858;
+  background-color: #00fdc3;
+}
+
+.home-hero .detail_box .btn-box a.btn-1:hover,
+.home-hero .detail_box .btn-box a.btn-1:focus-visible {
+  background-color: #72ffe0;
+}
+
+.home-hero .detail_box .btn-box a.btn-2 {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.home-hero .detail_box .btn-box a.btn-2:hover,
+.home-hero .detail_box .btn-box a.btn-2:focus-visible {
+  border-color: #00fdc3;
+  background-color: rgba(0, 253, 195, 0.1);
+}
+
+.home-hero-visual {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero-visual img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 520px);
+  filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.2));
+  animation: home-float 5s ease-in-out infinite;
+}
+
+.home-hero-glow {
+  position: absolute;
+  width: min(90%, 430px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(0, 253, 195, 0.14);
+  box-shadow: 0 0 90px rgba(0, 253, 195, 0.18);
+}
+
+.home-hero-card {
+  position: absolute;
+  right: 0;
+  bottom: 7%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 15px 19px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(4, 24, 88, 0.78);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.home-hero-card strong {
+  font-size: 15px;
+}
+
+.home-hero-card span {
+  color: #c1c8da;
+  font-size: 12px;
+}
+
+@keyframes home-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-hero {
+    min-height: auto;
+    padding: 58px 0 78px;
+  }
+
+  .home-hero-container {
+    grid-template-columns: 1fr;
+    width: min(100% - 40px, 560px);
+    gap: 30px;
+  }
+
+  .home-hero-content {
+    text-align: center;
+  }
+
+  .home-hero .detail_box h1,
+  .home-hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-hero .detail_box .btn-box {
+    justify-content: center;
+  }
+
+  .home-hero-visual {
+    min-height: 300px;
+  }
+
+  .home-hero-visual img {
+    width: min(100%, 390px);
+  }
+
+  .home-hero-card {
+    right: 2%;
+    bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-visual img {
+    animation: none;
+  }
+}

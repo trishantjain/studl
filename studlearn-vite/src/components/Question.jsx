@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "./Navbar";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 // import { NewsApi } from 'newsapi'
 import "./css/question.css";
+import "./css/footer.css";
 import { TypeAnimation } from "react-type-animation";
 
 function Question() {
@@ -115,61 +116,53 @@ function Question() {
 
       {/* Contact Section */}
       <div className="sub_page">
-        <div className="footer_bg">
-          <section className="contact_section layout_padding" id="contactLink">
-            <div className="container">
+        <div className="footer_bg footer-color">
+          <section className="contact_section layout_padding home-contact-section" id="contactLink">
+            <div className="contact-container">
               <div className="heading_container">
                 <h2>Get In touch</h2>
               </div>
-            </div>
-            <div className="container">
-              <div className="row">
-                <div className="col-lg-6 col-md-8 mx-auto">
-                  <form>
-                    <div className="form-row">
-                      <div className="form-group col-md-6">
+              <form className="contact-form">
+                <div className="contact-form-row">
+                  <div className="contact-form-group">
                         <input
                           type="text"
                           className="form-control"
                           id="inputName4"
                           placeholder="Name "
                         />
-                      </div>
-                      <div className="form-group col-md-6">
+                  </div>
+                  <div className="contact-form-group">
                         <input
                           type="email"
                           className="form-control"
                           id="inputEmail4"
                           placeholder="Email id"
                         />
-                      </div>
-                    </div>
-                    <div className="form-row">
-                      <div className="form-group col">
+                  </div>
+                </div>
+                <div className="contact-form-group">
                         <input
                           type="text"
                           className="form-control"
                           id="inputSubject4"
                           placeholder="Subject"
                         />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="inputMessage"
-                        placeholder="Message"
-                      />
-                    </div>
-                    <div className="d-flex justify-content-center">
+                </div>
+                <div className="contact-form-group">
+                  <textarea
+                    className="form-control contact-message"
+                    id="inputMessage"
+                    placeholder="Message"
+                    rows="4"
+                  />
+                </div>
+                <div className="contact-submit">
                       <button type="submit" className="">
                         Send
                       </button>
-                    </div>
-                  </form>
                 </div>
-              </div>
+              </form>
             </div>
           </section>
 
